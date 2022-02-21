@@ -1,0 +1,103 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>수정페이지</title>
+        <style>
+            body {
+                background:url( https://ifh.cc/g/bPwMA6.gif ) ;
+                background-attachment:fixed;
+                background-repeat: yes-repeat;
+                background-position: bottom right;
+                margin-left:auto; 
+                margin-right:auto;
+            } 
+            h2 {
+                font-family: "Lobster", "Lobster", sans-serif;
+            }
+            input {
+                width: 200px;
+                height: 25px;
+                border: solid 1px gray;
+                border-radius: 20px;
+                margin-bottom: 10px;
+            }
+            div {
+                background-color: white;
+                opacity: 0.8;
+                border-radius: 30px;
+                padding: 30px 30px;
+                text-align: center;
+                width: 40%;
+                margin: 0 auto;
+            }
+            table {
+                margin: 30px 30px;
+                margin-left:auto; 
+                margin-right:auto;
+            }
+            button {
+                border-radius: 15px;
+                border: none;
+                width: 70px;
+                height: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%
+            var list = [-1, -1];
+            if (tlist[0].FINISHCHECK == '0')
+                list[0] = 'null';
+            else
+                list[1] = 'selected';
+
+        %>
+        <p style="margin-top: 100px;"></p>
+        <div>
+           
+            <h2>TODO Update</h2>
+            <form action='/update/<%= tlist[0].ID %>' method='post'>
+                <table>
+                    <tr>
+                        <th>제목</th>
+                        <td><input type='text' name='title' value='<%= tlist[0].TITLE %>' ></td>
+                    </tr>
+                    <tr>
+                        <th>상세설명</th>
+                        <td> <input  type='text' name='content' value='<%= tlist[0].CONTENT %>' ></td>
+                    </tr>
+                    <tr>
+                        <th>태그</th>
+                        <td><input type='text' name='tname' value='<%= tlist[0].TAG %>'></td>
+                    </tr>
+                    <tr>
+                        <th>마감목표일</th>
+                        <td><input type='date' name='targetdate' value='<%= tlist[0].TARGETDATE %>'></td>
+                    </tr>
+                    <tr>
+                        <th>완료일</th>
+                        <td><input type='date' name='fdate' value='<%= tlist[0].FDATE %>'></td>
+                    </tr>
+                    <tr>
+                        <th>완료여부</th>
+                        <!-- <td><input type='text' name='finishcheck' value='<%= tlist[0].FINISHCHECK %>' ></td> -->
+                        <td>
+                            
+                        <select name="finishcheck">
+                            <option value='0'>❌</option>
+                            <option value='1' <%= list[1] %> >⭕</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+            
+                <button type='submit'>수정</button>
+                <button type="button" onclick="location.href='/list'">취소</button>
+            </form>
+        </div>
+    </body>
+</html>

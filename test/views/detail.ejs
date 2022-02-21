@@ -1,0 +1,123 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>상세보기</title>
+        <style>
+            body {
+                background:url( https://ifh.cc/g/bPwMA6.gif ) ;
+                background-attachment:fixed;
+                background-repeat: yes-repeat;
+                background-position: bottom right;
+                margin-left:auto; 
+                margin-right:auto;
+                
+            } 
+            h2 {
+                font-family: "Lobster", "Lobster", sans-serif;
+            }
+
+            #divStyle {
+                background-color: white;
+                opacity: 0.8;
+                border-radius: 30px;
+                padding: 30px 30px;
+                text-align: center;
+                width: 40%;
+                margin: 0 auto;
+            }
+
+            table {
+                margin: 20px 30px;
+                margin-left:auto; 
+                margin-right:auto;
+            }
+            td, th {
+                padding-bottom: 10px;
+                padding-left: 30px;
+            }
+            button {
+                border-radius: 15px;
+                border: none;
+                width: 70px;
+                height: 25px;
+            }
+
+            p {
+                margin-bottom: -8px;
+                margin-left: 350px;
+                font-size: 6px;
+                color: gray;
+            }
+
+            #tagStyle {
+                text-align: center;
+                border-radius: 8px;
+                width: 50%;
+                height: 15px;
+                font-size: 9px;
+                background-color:  #<%= tlist[0].BACKCOLOR %>;
+                color:  #<%= tlist[0].TEXTCOLOR %>;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%
+            var check;
+            if (tlist[0].FINISHCHECK == 1) 
+                check = '⭕';
+            else
+                check = '❌';
+                
+            var updateDate;
+            if( tlist[0].UDATE != null) 
+                updateDate = '수정 날짜 : ' + tlist[0].UDATE;
+            else
+                updateDate = '';
+
+        %>
+
+        <p style="margin-top: 100px;"></p>
+        <div id="divStyle">
+        <h2>TODO Write</h2>
+            <p>글쓴 날짜 : <%= tlist[0].WDATE %></p>
+            <p><%=updateDate%></p>
+
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <td><%= tlist[0].TITLE %></td>
+                </tr>
+                <tr>
+                    <th>상세설명</th>
+                    <td><%= tlist[0].CONTENT %></td>
+                </tr>
+                <tr>
+                    <th>태그</th>
+                    <td><div id="tagStyle"><%= tlist[0].TAG %></div></td>
+                </tr>
+                <tr>
+                    <th>마감목표일</th>
+                    <td><%= tlist[0].TARGETDATE %></td>
+                </tr>
+                <tr>
+                    <th>완료일</th>
+                    <td><%= tlist[0].FDATE %></td>
+                </tr>
+                <tr>
+                    <th>완료여부</th>
+                    <td><%= check %></td>
+                 
+                </tr>
+            </table>
+
+            <button type="button" onclick="location.href='/deleteAf/<%= tlist[0].ID %>'">삭제</button> 
+            <button type="button" onclick="location.href='/updateAf/<%= tlist[0].ID %>'">수정</button> 
+            <!-- <button type="button" onclick="location.href='/list'">취소</button> -->
+ 
+        </div>
+    </body>
+</html>

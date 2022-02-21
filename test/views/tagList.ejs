@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>목록</title>
+    </head>
+    <body>
+        <h2>할일 목록</h2>
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th>태그명</th>
+                    <th>태그삭제</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(i = 0; i < list2.length; i++) { %>
+                <tr>
+                    <td><%=list2[i].TNAME %></td>
+                    <td><a href="/tagDeleteAf/<%= list2[i].TAGID %>">삭제</a></td>
+                </tr>
+                
+                <% } %>
+            </tbody>
+        </table boader='1'>
+        
+
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>todoList</title>
+        <style>
+            body {
+                background:url( https://ifh.cc/g/bPwMA6.gif ) ;
+                background-attachment:fixed;
+                background-repeat: yes-repeat;
+                background-position: bottom right;
+                margin-left:auto; 
+                margin-right:auto;
+                
+            } 
+
+            #titleStyle {
+                margin-top: 50px;
+                text-align: center;
+                color: white;
+                font-size: 35px;
+                font-family: "Lobster", "Lobster", sans-serif;
+            }
+            #style1 {
+                width: 40%;
+            }
+
+            a {
+                text-align: center;
+                text-decoration: none; /* 링크의 밑줄 제거 */
+                color: inherit; /* 링크의 색상 제거 */
+            }
+
+
+            button {
+                border-radius: 15px;
+                border: none;
+                width: 80px;
+                height: 25px;
+                opacity: 0.8;
+            }
+            table { 
+                border: none;
+                background-color:white; 
+                border-radius: 20px;
+                width: 60%;
+                margin-left:auto; 
+                margin-right:auto;
+                text-align: center;
+                opacity: 0.8;
+                padding: 20px;
+            }
+
+            td, tr, th{ 
+                border: none;
+                background-color: white; 
+                border-radius: 20px;
+                padding: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <%
+            var check = [];
+            check.fill(0);
+
+            for (i = 0; i < list.length; i++) {
+                if (list[i].FINISHCHECK == 1) 
+                    check[i] = '⭕';
+                else
+                    check[i] = '❌';
+            }
+        %>
+
+        <p id="titleStyle">Todolist</p>
+
+        <table>
+            <div style="width: 79%; text-align: right;">
+            <button onclick="location.href='../write'">할일 등록</button>
+            </div>
+
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th id="style1">제목</th>
+                    <th>마감목표일</th>
+                    <th>완료일</th><
+                    <th>완료</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(i = 0; i < list.length; i++) { %>
+                <tr>
+                    <td><%=i+1 %></td>
+                    <td><a href="/detailAf/<%= list[i].ID %>"><%=list[i].TITLE %></a></td>
+                    <td><%=list[i].TARGETDATE %></td>
+                    <td><%=list[i].FDATE %></td>
+                    <td><%=check[i] %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+    </body>
+</html>
