@@ -1,7 +1,12 @@
 # TodoList 
+#### ✏️일정 목록 보기
+<img src="https://user-images.githubusercontent.com/71260043/201368831-ba18519d-ee56-4852-b0ed-1606075d5671.jpg"  width="600" />
 
-![슬라이드6](https://user-images.githubusercontent.com/71260043/154949737-33af3b0e-35ef-4a7e-a5b3-12f68a05bf6f.JPG)
-![슬라이드7](https://user-images.githubusercontent.com/71260043/154949753-7e2e74cc-47ae-48be-9b2d-33b1710ca218.JPG)
-![슬라이드8](https://user-images.githubusercontent.com/71260043/154949762-1a0d3ffe-d1c3-4f6f-a09c-a1d37dffa556.JPG)
-![슬라이드9](https://user-images.githubusercontent.com/71260043/154949770-691ae420-c870-4d25-aa0f-930dfda09fef.JPG)
+#### ✏️일정 등록 
+<img src="https://user-images.githubusercontent.com/71260043/201368835-57e29f81-cf9c-40e9-993b-e11470c731f2.jpg"  width="600" />
 
+#### ✏️일정 상세 보기
+<img src="https://user-images.githubusercontent.com/71260043/201368844-428936f8-d51a-410b-be53-f870df3a7950.jpg"  width="600" />
+
+#### ✏️일정 수정 
+<img src="https://user-images.githubusercontent.com/71260043/201368854-6a5dbde8-aebe-4d5f-ba21-aaad6f1a408e.jpg"  width="400" />
